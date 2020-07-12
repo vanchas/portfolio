@@ -1,0 +1,124 @@
+.circle_wrapper {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.circle_1 {
+	position: relative;
+	width: 540px;
+	height: 540px;
+	margin: 0 auto;
+	border-radius: 50%;
+	border: 40px solid #111215;
+	animation: rotate 10s infinite cubic-bezier(0.64, -0.56, 0.36, 1.56);
+}
+
+.circle_2 {
+	position: relative;
+	width: 460px;
+	height: 460px;
+	border-radius: 50%;
+	border: 40px solid #111215;
+	box-shadow: 0 0 10px 3px rgba(255, 255, 255, 0.5);
+	animation: rotate 10s infinite cubic-bezier(0.64, -0.56, 0.36, 1.56);
+}
+.circle_3 {
+	position: relative;
+	width: 380px;
+	height: 380px;
+	border-radius: 50%;
+	border: 40px solid #111215;
+	box-shadow: 0 0 10px 3px rgba(255, 255, 255, 0.5);
+	animation: rotate 10s infinite cubic-bezier(0.64, -0.56, 0.36, 1.56);
+}
+.circle_4 {
+	position: relative;
+	width: 300px;
+	height: 300px;
+	border-radius: 50%;
+	border: 40px solid #111215;
+	box-shadow: 0 0 10px 3px rgba(255, 255, 255, 0.5);
+	animation: rotate 10s infinite cubic-bezier(0.64, -0.56, 0.36, 1.56);
+}
+.circle_5 {
+	position: relative;
+	width: 220px;
+	height: 220px;
+	border-radius: 50%;
+	border: 40px solid #111215;
+	box-shadow: 0 0 10px 3px rgba(255, 255, 255, 0.5);
+	animation: rotate 10s infinite cubic-bezier(0.64, -0.56, 0.36, 1.56);
+}
+.circle_6 {
+	position: relative;
+	width: 140px;
+	height: 140px;
+	border-radius: 50%;
+	border: 40px solid #111215;
+	box-shadow: 0 0 10px 3px rgba(255, 255, 255, 0.5);
+	animation: rotate 10s infinite cubic-bezier(0.64, -0.56, 0.36, 1.56);
+}
+.circle_head {
+	position: relative;
+	width: 60px;
+	height: 60px;
+	margin: 0 auto;
+	border-radius: 50%;
+	background: #111215;
+	box-shadow: 0 0 10px 3px rgba(255, 255, 255, 0.5);
+	animation: rotation 10s infinite cubic-bezier(0.64, -0.56, 0.36, 1.56);
+}
+@keyframes rotate {
+	0% {
+		transform: rotateZ(0deg);
+	}
+	80%,
+	100% {
+		transform: rotateZ(360deg);
+	}
+}
+.text {
+	position: absolute;
+	color: #fff;
+	top: calc(50% - 23px);
+	left: -28px;
+	font-family: "Helvetica", sans-serif;
+	opacity: 0.8;
+	z-index: 2;
+	font-size: 2.5em;
+}
+.text_2 {
+	position: absolute;
+	color: #fff;
+	top: calc(50% - 23px);
+	right: -28px;
+	opacity: 0.8;
+	font-size: 2.5em;
+}
+.text_h_1 {
+	position: absolute;
+	color: #fff;
+	top: calc(50% - 23px);
+	left: 18px;
+	opacity: 0.8;
+	z-index: 1;
+	font-size: 2.5em;
+}
+.text_h_2 {
+	position: absolute;
+	color: #fff;
+	top: calc(50% - 23px);
+	right: 0.1em;
+	opacity: 0.8;
+	font-size: 2.5em;
+}
+.i_1 {
+	position: absolute;
+	left: -28px;
+}
+.i_2 {
+	position: absolute;
+	right: -28px;
+}
