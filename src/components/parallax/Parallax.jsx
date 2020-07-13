@@ -24,8 +24,11 @@ export default function Parallax(props) {
       windowScrollTop > parallaxDivOffsetTop &&
       windowScrollTop <= parallaxDivLimit
     ) {
-      parallaxDiv.current.style.backgroundPosition =
-        '50% ' + (windowScrollTop - parallaxDivOffsetTop) / speed + "px";
+      (window.innerWidth > 768)
+        ? parallaxDiv.current.style.backgroundPosition =
+        '50% ' + (windowScrollTop - parallaxDivOffsetTop) / speed + "px"
+        : parallaxDiv.current.style.backgroundPosition =
+        '90% ' + (windowScrollTop - parallaxDivOffsetTop) / speed + "px"
     } else {
       parallaxDiv.current.style.backgroundPositionY = "50% 0";
     }

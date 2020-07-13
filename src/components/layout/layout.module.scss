@@ -1,14 +1,45 @@
 .wrapper {
 	position: relative;
 	background-color: #edf3ff;
-	padding-top: 5em;
+	// background: url("../../assets/images/math-bg-2.jpg");
+	padding: 5em 0;
 	@media screen and (max-width: 1200px) {
-		padding-top: 0;
+		padding: 0;
+	}
+}
+
+.scroll_to_top {
+	position: fixed;
+	bottom: 10%;
+	right: 5%;
+	border-radius: 50%;
+	width: 5em;
+	height: 5em;
+	background-color: rgba(25, 105, 255, 0.5);
+	text-align: center;
+	z-index: 999;
+	display: none;
+	transition: 0.5s;
+	span {
+		display: block;
+		font-weight: 700;
+		color: #fff;
+		padding-top: 0em;
+		line-height: 0.95em;
+		transform: rotate(90deg);
+		font-size: 4.5em;
+		padding-bottom: 0.2em;
+	}
+	&:hover {
+		transition: 0.5s;
+		box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.3);
+		transform: scale(1.1);
 	}
 }
 
 .blue_rect {
 	background-color: #1969ff;
+	// background-color: #000;
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -29,7 +60,7 @@
 	overflow: hidden;
 
 	main {
-		margin-top: -1em;
+		margin-top: -2em;
 		flex: 1;
 	}
 }

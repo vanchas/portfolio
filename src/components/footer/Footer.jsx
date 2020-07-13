@@ -4,13 +4,14 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Link from '@material-ui/core/Link';
+import { connect } from 'react-redux';
 
-function Copyright() {
+function Copyright({ language }) {
   return (
     <Typography variant="body2" color="textSecondary">
-      {'Copyright © '}
+      {`${language.substring} © `}
       <Link color="inherit" href="#">
-        Khoroshevskyi Ivan
+        {language.name}
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -27,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function StickyFooter() {
+function StickyFooter({ language }) {
   const classes = useStyles();
 
   return (
@@ -35,9 +36,15 @@ export default function StickyFooter() {
       <CssBaseline />
       <div className={classes.footer}>
         <Container maxWidth="sm">
-          <Copyright />
+          <Copyright language={language} />
         </Container>
       </div>
     </div>
   );
 }
+
+const mapStateToProps = (state) => ({
+  language: state.app.language.footer
+})
+
+export default connect(mapStateToProps, null)(StickyFooter)

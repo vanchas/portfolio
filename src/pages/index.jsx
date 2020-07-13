@@ -7,34 +7,73 @@ import Skills from '../components/skills/Skills'
 import About from '../components/about/About'
 import Education from '../components/education/Education'
 import Contacts from '../components/contacts/Contacts'
+import { useRef, useEffect, Fragment } from 'react'
+import { connect } from 'react-redux'
 
-const blocks = [
-  { image: MeBg, speed: 2, component: <Intro /> },
-  { image: null, speed: null, component: <About /> },
-  { image: Background_01, speed: 2, component: <Skills /> },
-  { image: null, speed: null, component: <Education /> },
-  { image: Background_02, speed: 1, component: <Contacts /> }
-]
+const Main = ({ scrollToElement }) => {
+  const introRef = useRef(null)
+  const aboutRef = useRef(null)
+  const skillsRef = useRef(null)
+  const educationRef = useRef(null)
+  const contactsRef = useRef(null)
 
-const Main = () => (
-  <>
-    {blocks.map((block, index) => (
-      index % 2 == 0
-        ? <Parallax
-          key={index.toString()}
-          imageUrl={block.image}
-          parallaxSpeed={block.speed}>
-          <div className="content">
+  const blocks = [
+    { image: MeBg, speed: 2, component: <div ref={introRef}><Intro /></div> },
+    { image: null, speed: null, component: <div ref={aboutRef}><About /></div> },
+    { image: Background_01, speed: 2, component: <div ref={skillsRef}><Skills /></div> },
+    { image: null, speed: null, component: <div ref={educationRef}><Education /></div> },
+    { image: Background_02, speed: 1, component: <div ref={contactsRef}><Contacts /></div> }
+  ]
+
+  useEffect(() => {
+    executeScroll(scrollToElement)
+  }, [scrollToElement])
+
+  const scrollToRef = (ref) => window.scrollTo({
+    top: ref.current.offsetTop,
+    behavior: "smooth"
+  })
+
+  const executeScroll = (ref) => {
+    if (ref === 'Intro') {
+      scrollToRef(introRef)
+    } else if (ref === 'About') {
+      scrollToRef(aboutRef)
+    } else if (ref === 'Skills') {
+      scrollToRef(skillsRef)
+    } else if (ref === 'Experience') {
+      scrollToRef(educationRef)
+    } else if (ref === 'Education') {
+      scrollToRef(educationRef)
+    } else if (ref === 'Contacts') {
+      scrollToRef(contactsRef)
+    }
+  }
+
+  return (
+    <>
+      {blocks.map((block, index) => (
+        index % 2 == 0
+          ? <Parallax
+            key={index.toString()}
+            imageUrl={block.image}
+            parallaxSpeed={block.speed}>
+            <div className="content">
+              {block.component}
+            </div>
+          </Parallax>
+          : <div
+            key={index.toString()}
+            className="content">
             {block.component}
           </div>
-        </Parallax>
-        : <div
-          key={index.toString()}
-          className="content">
-          {block.component}
-        </div>
-    ))}
-  </>
-)
+      ))}
+    </>
+  )
+}
 
-export default Main
+const mapStateToProps = (state) => ({
+  scrollToElement: state.app.scrollToElement
+})
+
+export default connect(mapStateToProps, null)(Main)

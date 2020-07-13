@@ -12,6 +12,7 @@ import Redux from '../../assets/images/logos/redux.png'
 import Scss from '../../assets/images/logos/scss.png'
 import s from './skills.module.scss'
 import $ from 'jquery'
+import { connect } from 'react-redux'
 
 const skillsList = [
   { image: Html, title: 'Semantic HTML' },
@@ -27,11 +28,11 @@ const skillsList = [
   { image: Redux, title: 'Redux' }
 ]
 
-export default function Skills() {
+function Skills({ language }) {
 
   return (
     <div className="py-5">
-      <h3 className="text-center h1 mb-4 font-weight-bold text-white" style={{ marginTop: '-1em' }}>Skills</h3>
+      <h3 className="text-center h1 mb-4 font-weight-bold text-white" style={{ marginTop: '-1em' }}>{language.header}</h3>
       <ul className={s.skills_list}>
         {skillsList.map(skill => (
           <li key={skill.title} className={`shadow-lg rounded d-flex justify-content-center py-2 ${s.tooltip}`}>
@@ -43,3 +44,9 @@ export default function Skills() {
     </div>
   )
 }
+
+const mapStateToProps = (state) => ({
+  language: state.app.language.skills
+})
+
+export default connect(mapStateToProps, null)(Skills)

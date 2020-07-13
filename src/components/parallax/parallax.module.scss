@@ -1,4 +1,14 @@
 .parallax {
 	background: center top / cover no-repeat;
 	transition: background-position 0s linear;
+	@media screen and (max-width: 768px) {
+		background: 90% top / cover no-repeat;
+		// -moz-box-shadow: inset 0px 0px 47px 3px #fff;
+		// -webkit-box-shadow: inset 0px 0px 47px 3px #fff;
+		// box-shadow: inset 0px 0px 277px 3px #fff;
+
+		// -moz-box-shadow: inset 0px 0px 47px 3px #4c3f37;
+		// -webkit-box-shadow: inset 0px 0px 47px 3px #4c3f37;
+		// box-shadow: inset 0px 0px 277px 3px #4c3f37;
+	}
 }
