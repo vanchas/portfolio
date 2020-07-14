@@ -9,4 +9,12 @@ body {
 
 .content {
 	padding: 5rem 5%;
+	&:nth-child(2) {
+		background-color: rgba(25, 105, 255, 1);
+		color: #fff;
+	}
+	&:nth-child(4) {
+		background-color: rgba(25, 105, 255, 1);
+		color: #fff;
+	}
 }

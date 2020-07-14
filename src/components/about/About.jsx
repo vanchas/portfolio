@@ -12,7 +12,8 @@ const styles = {
 function About({ language }) {
   return (
     <div className="py-5">
-      <h3 className="text-center h2 mb-4 font-weight-bold">{language.header}</h3>
+      <h3 className="text-center h2 mb-4 font-weight-bold">
+        {language.header}</h3>
       <p style={styles.text}>{language.text.split('~~')[0]}
         <br /> {language.text.split('~~')[1]} <br /> {language.text.split('~~')[2]}</p>
     </div>

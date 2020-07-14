@@ -7,7 +7,7 @@ import Skills from '../components/skills/Skills'
 import About from '../components/about/About'
 import Education from '../components/education/Education'
 import Contacts from '../components/contacts/Contacts'
-import { useRef, useEffect, Fragment } from 'react'
+import { useRef, useEffect, Fragment, useState } from 'react'
 import { connect } from 'react-redux'
 
 const Main = ({ scrollToElement }) => {
@@ -16,16 +16,33 @@ const Main = ({ scrollToElement }) => {
   const skillsRef = useRef(null)
   const educationRef = useRef(null)
   const contactsRef = useRef(null)
+  const [windowSize, setWindowSize] = useState(0)
 
   const blocks = [
-    { image: MeBg, speed: 2, component: <div ref={introRef}><Intro /></div> },
-    { image: null, speed: null, component: <div ref={aboutRef}><About /></div> },
-    { image: Background_01, speed: 2, component: <div ref={skillsRef}><Skills /></div> },
-    { image: null, speed: null, component: <div ref={educationRef}><Education /></div> },
-    { image: Background_02, speed: 1, component: <div ref={contactsRef}><Contacts /></div> }
+    {
+      image: MeBg, speed: 2,
+      component: <div ref={introRef}><Intro /></div>
+    },
+    {
+      image: null, speed: null,
+      component: <div ref={aboutRef}><About /></div>
+    },
+    {
+      image: windowSize > 767 ? Background_01 : null, speed: 2,
+      component: <div ref={skillsRef}><Skills /></div>
+    },
+    {
+      image: null, speed: null,
+      component: <div ref={educationRef}><Education /></div>
+    },
+    {
+      image: Background_02, speed: 1,
+      component: <div ref={contactsRef}><Contacts /></div>
+    }
   ]
 
   useEffect(() => {
+    setWindowSize(window.innerWidth)
     executeScroll(scrollToElement)
   }, [scrollToElement])
 

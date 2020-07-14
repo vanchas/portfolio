@@ -1,8 +1,15 @@
 const withPWA = require('next-pwa')
 const withImages = require('next-images')
 
-module.exports = withPWA(withImages({
+const settings = {
+  env: {
+  },
+  devIndicators: {
+    autoPrerender: false,
+  },
   pwa: {
-    dest: 'public'
-  }
-}))
+    dest: 'public',
+  },
+};
+
+module.exports = withPWA(withImages(settings));

@@ -14,6 +14,16 @@ export default class MyDocument extends Document {
             rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
           />
+          <link rel="manifest" href="/static/manifest.json" />
+          <link rel="shortcut icon" href="/static/favicon.ico" />
+          <link rel="icon" href="/static//favicon.ico" type="image/x-icon" />
+          <meta charset='utf-8' />
+          <meta http-equiv='X-UA-Compatible' content='IE=edge' />
+          <meta name='viewport' content='width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no' />
+          <meta name='description' content='Description' />
+          <meta name='keywords' content='Keywords' />
+          <link rel='apple-touch-icon' href='/static/icon-192x192.png' />
+          <meta name='theme-color' content='#317EFB' />
         </Head>
         <body>
           <Main />

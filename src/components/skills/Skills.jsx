@@ -32,7 +32,7 @@ function Skills({ language }) {
 
   return (
     <div className="py-5">
-      <h3 className="text-center h1 mb-4 font-weight-bold text-white" style={{ marginTop: '-1em' }}>{language.header}</h3>
+      <h3 className={`${s.header} text-center h1 mb-4 font-weight-bold`} style={{ marginTop: '-1em' }}>{language.header}</h3>
       <ul className={s.skills_list}>
         {skillsList.map(skill => (
           <li key={skill.title} className={`shadow-lg rounded d-flex justify-content-center py-2 ${s.tooltip}`}>

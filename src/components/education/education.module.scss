@@ -1,7 +1,7 @@
 .card {
 	position: relative;
 	opacity: 0.6;
-	margin-top: calc(50% - 100px);
+	margin-top: -50px;
 }
 
 .card:hover {
@@ -12,7 +12,7 @@
 	width: 300px;
 	height: 250px;
 	transition: 1s;
-	@media screen and (max-width: 768px) {
+	@media screen and (max-width: 767px) {
 		width: auto;
 	}
 }
@@ -20,25 +20,40 @@
 .face1 {
 	position: relative;
 	display: grid;
-	background: #636363;
+	background-color: #636363;
 	justify-content: center;
 	align-items: center;
 	z-index: 1;
 	padding: 1em;
 	text-align: center;
 	transform: translateY(90px);
+	@media screen and (max-width: 767px) {
+		background-color: #989898;
+	}
 }
 .card:hover .face1 {
 	transform: translateY(0px);
 	background: #1969ff;
+	@media screen and (max-width: 767px) {
+		background: #fff;
+		border-bottom: 1px solid #ccc;
+	}
 }
 .card:hover .img1 {
 	filter: invert(1);
 	transition: 1s;
+	@media screen and (max-width: 767px) {
+		transition: 1s;
+		filter: none;
+	}
 }
 .card:hover .heading {
 	color: #fff;
 	transition: 1s;
+	@media screen and (max-width: 767px) {
+		transition: 1s;
+		color: #000;
+	}
 }
 .card:hover .face2 {
 	transform: translateY(-30px);
@@ -72,6 +87,7 @@
 }
 
 .face2_text {
+	color: #000;
 	padding: 0;
 	margin: 0;
 	text-align: center;
